@@ -48,15 +48,23 @@ Installation & Setup
 Clone the repository:
 
 Bash
-git clone [https://github.com/your-username/notes-api.git](https://github.com/your-username/notes-api.git)
+git clone https://github.com/vikashkumaryadav7411/GO-REST-API.git
+
 cd notes-api
+
 Configure Environment Variables:
+
 Create a .env file in the root directory of the project:
 
 Code snippet
+
 PORT=8080
+
 MONGO_URI=mongodb://localhost:27017
+
 MONGO_DB_NAME=notes_db
+
+
 
 Download Go Dependencies:
 
