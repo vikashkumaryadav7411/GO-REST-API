@@ -14,7 +14,32 @@ The project follows a clean, decoupled architecture breaking features down into 
 * **Health check endpoint** for container orchestrators or monitoring setups.
 
 ---
-Prerequisites
+
+
+## Project Structure
+
+```text
+├── cmd/
+│   └── api/
+│       └── main.go          # Application entrypoint
+├── internal/
+│   ├── config/
+│   │   └── config.go        # Environment variable loader
+│   ├── db/
+│   │   └── mongo.go         # Database connection client lifecycle
+│   ├── notes/
+│   │   ├── handler.go       # HTTP request/response handling logic
+│   │   ├── model.go         # Database and JSON representations
+│   │   ├── repository.go    # Direct MongoDB interaction layers
+│   │   └── routes.go        # HTTP endpoints group definitions
+│   └── server/
+│       └── router.go        # Core Engine setup & universal middleware
+├── .env.example             # Template for your local environment configs
+├── go.mod
+└── go.sum
+
+ ```
+ Prerequisites
 Go: Version 1.21 or higher installed.
 
 MongoDB: A running local instance or a MongoDB Atlas connection string.
@@ -23,7 +48,7 @@ Installation & Setup
 Clone the repository:
 
 Bash
-git clone 
+git clone [https://github.com/your-username/notes-api.git](https://github.com/your-username/notes-api.git)
 cd notes-api
 Configure Environment Variables:
 Create a .env file in the root directory of the project:
@@ -52,31 +77,6 @@ Web Framework: Gin Gonic
 Database Client: Official MongoDB Go Driver
 
 Environment Management: godotenv
-
-
-
-## Project Structure
-
-```text
-├── cmd/
-│   └── api/
-│       └── main.go          # Application entrypoint
-├── internal/
-│   ├── config/
-│   │   └── config.go        # Environment variable loader
-│   ├── db/
-│   │   └── mongo.go         # Database connection client lifecycle
-│   ├── notes/
-│   │   ├── handler.go       # HTTP request/response handling logic
-│   │   ├── model.go         # Database and JSON representations
-│   │   ├── repository.go    # Direct MongoDB interaction layers
-│   │   └── routes.go        # HTTP endpoints group definitions
-│   └── server/
-│       └── router.go        # Core Engine setup & universal middleware
-├── .env.example             # Template for your local environment configs
-├── go.mod
-└── go.sum
-
 
 
 
